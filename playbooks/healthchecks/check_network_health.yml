@@ -7,7 +7,7 @@
       vars:
         cpu_utilization:
           details: true
-          warning_threshold: 90
+          warning_threshold: 1
           critical_threshold: 95
       register: cpu_result
     
