@@ -1,0 +1,12 @@
+- name: Create Network Backup Locally
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Create Network Backup
+      ansible.builtin.include_role:
+        name: network.backup.backup
+      vars:
+        data_store:
+          local:
+            path: "/tmp/network_backups/{{ inventory_hostname }}"
+            filename: "{{ ansible_date_time.date }}_{{ inventory_hostname }}.txt"
