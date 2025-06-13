@@ -1,0 +1,12 @@
+- name: Restore Network Configuration from Local Path
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Run restore network config
+      ansible.builtin.include_role:
+        name: network.backup.restore
+      vars:
+        data_store:
+          local:
+            path: "/tmp/network_backups/{{ inventory_hostname }}"
+            filename: "{{ ansible_date_time.date }}_{{ inventory_hostname }}.txt"
