@@ -2,7 +2,7 @@
   hosts: all
   gather_facts: true
   vars:
-    backup_date: 2025-06-13
+    backup_date: "2025-06-13"
     data_store:
       scm:
         origin:
