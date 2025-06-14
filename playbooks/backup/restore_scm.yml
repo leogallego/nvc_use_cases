@@ -1,6 +1,6 @@
 - name: Create Network Restore Play
   hosts: all
-  gather_facts: false
+  gather_facts: true
   vars:
     data_store:
       scm:
