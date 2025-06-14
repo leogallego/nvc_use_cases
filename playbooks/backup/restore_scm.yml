@@ -10,8 +10,8 @@
             email: "993814+leogallego@users.noreply.github.com" 
           url: "https://github.com/leogallego/nvc_use_cases.git"
           token: "{{ lookup('env', 'gh_token') }}"
-          filename: "ios_22_05_2025.txt"
-          path: "data/backups/22-05-2025/ios"
+          path: "data/backups/{{ ansible_date_time.date }}/{{ inventory_hostname }}"
+          filename: "{{ ansible_date_time.date }}_{{ inventory_hostname }}.txt"
   tasks:
     - name: Set host-level var (for AAP compatibility)
       set_fact:
